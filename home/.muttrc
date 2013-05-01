@@ -1,0 +1,114 @@
+# imap
+set folder=imaps://webmail.hp.com
+set imap_user=bourpaul
+set imap_idle=yes
+set imap_keepalive=150
+set record="+Sent Items"
+
+# sendmail
+set sendmail="/usr/sbin/ssmtp"
+set from="paul-david.bourke@hp.com"
+set realname="Paul Bourke"
+set sendmail_wait=-1
+
+# mailbox
+set postponed="~/.mutt/postponed"
+set spoolfile=+INBOX
+set mbox_type=Maildir
+
+# pager
+set markers=no
+set pager_index_lines=5
+set editor="vim -c 'set nonumber'"
+set pager_stop=yes
+
+# index
+set date_format="%a, %b %d, %Y at %I:%M:%S%p %Z"
+set ascii_chars=yes
+set sort=reverse-last-date-received
+#set sort=reverse-threads
+#set sort_aux=last-date-received
+
+# caches
+set header_cache="~/.mutt/headercache"
+set message_cachedir =~/.mutt/cache/bodies
+set certificate_file =~/.mutt/certificates
+set alias_file="~/.mutt/aliases"
+
+# ldap
+set query_command="lbdbq '%s' 2>/dev/null | grep -Evi 'compaq|digital'"
+
+# general options
+auto_view text/html
+set abort_unmodified = no
+set beep_new=yes
+set confirmappend=no
+set copy=yes
+set delete=yes
+set fast_reply="yes"
+set forward_quote=yes
+set include=yes
+set mark_old=no
+set menu_scroll=yes
+set move=no
+set quit=ask-yes
+set reverse_alias=yes
+set reverse_realname=yes
+set signature="~/.mutt/sig"
+set sleep_time=0
+set timeout=5
+
+# s/mime settings
+source /etc/Muttrc.d/smime.rc
+set smime_ca_location="/usr/share/ca-certificates/ca-root.crt"
+set crypt_autosign = no
+set crypt_replyencrypt = no
+set smime_is_default
+set crypt_replysign = no
+set crypt_replysignencrypted = no
+set smime_certificates="~/.smime/certificates"
+set smime_keys="~/.smime/keys"
+set smime_default_key="a0769ac7.0"
+set smime_sign_as = "a0769ac7.0"
+
+# colors
+color normal default default
+color index green default ~N
+color index brightblue default "~F"
+color error red default
+color tree white default
+color status white blue
+color tilde default default
+color quoted cyan default
+
+# headers
+ignore *
+unignore date from: to cc subject organization
+color hdrdefault yellow default
+color header brightyellow default "^From:"
+color header brightyellow default "^To:"
+color header brightyellow default "^Subject:"
+color header brightyellow default "^Date:"
+color header brightyellow default "^CC:"
+
+# border lines
+color body blue default "( *[-+=#*~_]){6,}"
+
+# messages to me
+color index yellow default "!~s [JIRA] ~p !~N !~T !~F !~P"
+color index brightgreen default "!~s [JIRA] ~p ~N !~T !~F !~P"
+
+# openstack-dev
+color index red default "~s 'openstack-dev' ~N !~F"
+color index default default "~s 'openstack-dev' !~N !~F"
+
+# .n to mark all read
+macro index .n "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<clear-flag>*" \
+    "Mark all as read"
+
+macro index .m "<tag-pattern>Change in|JIRA<enter><tag-prefix><clear-flag>N<clear-flag>*" "Mark Jira/Gerrit read"
+
+macro index gh "<change-folder>=INBOX<enter>" "Go to inbox"
+
+# Sync mailbox regularly
+macro index <Return> <display-message><sync-mailbox>

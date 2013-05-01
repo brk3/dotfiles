@@ -1,0 +1,93 @@
+image/*; $HOME/.mutt/mutt_bgrun eog '%s';
+application/pdf; $HOME/.mutt/mutt_bgrun evince '%s';
+
+application/x-crossover-exe; /home/bourke/.mutt/mutt_bgrun /home/bourke/.cxoffice/desktopdata/cxoffice-0/cxassoc/Scripts/cxoffice-0:application_x-crossover-exe::run '%s'; \
+    description="CrossOver (Run)"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-cxarchive; /home/bourke/.mutt/mutt_bgrun /home/bourke/.cxoffice/desktopdata/cxoffice-0/cxassoc/Scripts/cxoffice-0:application_x-crossover-cxarchive::restore '%s'; \
+    description="CrossOver (Restore)"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-c4p; /home/bourke/.mutt/mutt_bgrun /home/bourke/.cxoffice/desktopdata/cxoffice-1/cxassoc/Scripts/cxoffice-1:application_x-crossover-c4p::install '%s'; \
+    description="CrossOver (Install)"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-tie; /home/bourke/.mutt/mutt_bgrun /home/bourke/.cxoffice/desktopdata/cxoffice-1/cxassoc/Scripts/cxoffice-1:application_x-crossover-tie::install '%s'; \
+    description="CrossOver (Install)"; \
+    test=test -n "$DISPLAY"
+application/rtf; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_msword" '%s'; \
+    description="Microsoft Word"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-wbk; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_msword" '%s'; \
+    description="Microsoft Word"; \
+    test=test -n "$DISPLAY"
+application/msword; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_msword" '%s'; \
+    description="Microsoft Word"; \
+    test=test -n "$DISPLAY"
+application/vnd.ms-word; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_msword" '%s'; \
+    description="Microsoft Word"; \
+    test=test -n "$DISPLAY"
+application/vnd.ms-excel; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.ms-excel" '%s'; \
+    description="Microsoft Excel"; \
+    test=test -n "$DISPLAY"
+application/msexcel; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.ms-excel" '%s'; \
+    description="Microsoft Excel"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-xla; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.ms-excel" '%s'; \
+    description="Microsoft Excel"; \
+    test=test -n "$DISPLAY"
+application/x-msexcel; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.ms-excel" '%s'; \
+    description="Microsoft Excel"; \
+    test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.openxmlformats-officedocument.wordprocessingml.document" '%s'; \
+    description="Microsoft Word"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-dothtml; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_x-crossover-dothtml" '%s'; \
+    description="Microsoft Word"; \
+    test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.wordprocessingml.template; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.openxmlformats-officedocument.wordprocessingml.template" '%s'; \
+    description="Microsoft Word"; \
+    test=test -n "$DISPLAY"
+application/vnd.ms-powerpoint; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.ms-powerpoint" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/x-mspowerpoint; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.ms-powerpoint" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-pwz; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.ms-powerpoint" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/mspowerpoint; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.ms-powerpoint" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-pothtml; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_x-crossover-pothtml" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.presentationml.template; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.openxmlformats-officedocument.presentationml.template" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.presentationml.slideshow; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.openxmlformats-officedocument.presentationml.slideshow" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-ppthtml; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_x-crossover-ppthtml" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.presentationml.presentation; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.openxmlformats-officedocument.presentationml.presentation" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.presentationml.slide; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.openxmlformats-officedocument.presentationml.slide" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/vnd.ms-officetheme; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.ms-officetheme" '%s'; \
+    description="Microsoft PowerPoint"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-xlshtml; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_x-crossover-xlshtml" '%s'; \
+    description="Microsoft Excel"; \
+    test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.openxmlformats-officedocument.spreadsheetml.sheet" '%s'; \
+    description="Microsoft Excel"; \
+    test=test -n "$DISPLAY"
+application/x-crossover-xlthtml; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_x-crossover-xlthtml" '%s'; \
+    description="Microsoft Excel"; \
+    test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.spreadsheetml.template; "/home/bourke/.cxoffice/Microsoft Office 2010/desktopdata/cxassoc/Scripts/cxoffice-bc028f50-176f-4e59-b9b5-a9b2b6b6ec19:application_vnd.openxmlformats-officedocument.spreadsheetml.template" '%s'; \
+    description="Microsoft Excel"; \
+    test=test -n "$DISPLAY"

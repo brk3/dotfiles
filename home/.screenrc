@@ -1,0 +1,11 @@
+hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+defscrollback 10000
+startup_message off
+bindkey -k k8 kill
+bind j focus down
+bind k focus up
+bind t focus top
+bind b focus bottom
+vbell off
+escape ``
+altscreen on

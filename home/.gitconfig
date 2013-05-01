@@ -1,0 +1,22 @@
+[user]
+    name = Paul Bourke
+    email = paul-david.bourke@hp.com
+    #email = pauldbourke@gmail.com
+
+[core]
+    editor = vim
+    pager = less -+$LESS -FRX
+    #gitproxy = gitproxy
+
+[merge]
+    defaultToUpstream = true
+
+[color]
+    ui = always
+
+[alias]
+    review = !sh `git rev-parse --show-toplevel`/tools/rfc.sh
+    fshow = !sh -c 'git show --pretty="format:" --name-only $1 | \
+        grep -v "^$" | uniq | \
+        sed -e "s#^#$(git rev-parse --show-toplevel)/#"' -
+    vim = !sh -c 'vim -p $(git fshow $1 | xargs)' -
