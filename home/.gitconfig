@@ -1,12 +1,10 @@
 [user]
     name = Paul Bourke
-    email = paul-david.bourke@hp.com
-    #email = pauldbourke@gmail.com
+    email = pauldbourke@gmail.com
 
 [core]
     editor = vim
     pager = less -+$LESS -FRX
-    #gitproxy = gitproxy
 
 [merge]
     defaultToUpstream = true
@@ -20,3 +18,6 @@
         grep -v "^$" | uniq | \
         sed -e "s#^#$(git rev-parse --show-toplevel)/#"' -
     vim = !sh -c 'vim -p $(git fshow $1 | xargs)' -
+
+[push]
+	default = simple
