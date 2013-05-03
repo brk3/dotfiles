@@ -65,5 +65,5 @@ function vimr() { vim -p $(find "$@" -type f | xargs) ;}
 export PATH=$HOME/bin/android-sdk-linux/platform-tools/:$HOME/bin/android-sdk-linux/tools:$PATH
 export EDITOR=vim
 export BROWSER=/usr/bin/firefox
-export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_43
+export JAVA_HOME=$HOME/bin/jdk1.7.0_21
 export ANDROID_HOME=$HOME/bin/android-sdk-linux
