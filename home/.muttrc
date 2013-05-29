@@ -5,6 +5,18 @@ set imap_idle=yes
 set imap_keepalive=150
 set record="+Sent Items"
 
+# sidebar (http://www.lunar-linux.org/mutt-sidebar/)
+# which mailboxes to list in the sidebar
+mailboxes "=INBOX" "=Sent Items" "=openstack-gerrit" "=hpcs-jira" \
+     "=hpcs-hipchat" "=hpcs-gerrit"
+set sidebar_visible = yes
+set sidebar_width = 25
+# ctrl-n, ctrl-p to select next, prev folder
+# ctrl-o to open selected folder
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
 # sendmail
 set sendmail="/usr/sbin/ssmtp"
 set from="paul-david.bourke@hp.com"
@@ -59,6 +71,7 @@ set sleep_time=0
 set timeout=5
 
 # s/mime settings
+# TODO: document setup
 source /etc/Muttrc.d/smime.rc
 set smime_ca_location="/usr/share/ca-certificates/ca-root.crt"
 set crypt_autosign = no
@@ -98,15 +111,9 @@ color body blue default "( *[-+=#*~_]){6,}"
 color index yellow default "!~s [JIRA] ~p !~N !~T !~F !~P"
 color index brightgreen default "!~s [JIRA] ~p ~N !~T !~F !~P"
 
-# openstack-dev
-color index red default "~s 'openstack-dev' ~N !~F"
-color index default default "~s 'openstack-dev' !~N !~F"
-
 # .n to mark all read
 macro index .n "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<clear-flag>*" \
     "Mark all as read"
-
-macro index .m "<tag-pattern>Change in|JIRA<enter><tag-prefix><clear-flag>N<clear-flag>*" "Mark Jira/Gerrit read"
 
 macro index gh "<change-folder>=INBOX<enter>" "Go to inbox"
 
