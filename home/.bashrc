@@ -62,8 +62,21 @@ __expand_tilde_by_ref() {
 # open all files recursively under a directory
 function vimr() { vim -p $(find "$@" -type f | xargs) ;}
 
+get_field () {
+    while read data; do
+        if [ "$1" -lt 0 ]; then
+            field="(\$(NF$1))";
+        else
+            field="\$$(($1 + 1))";
+        fi;
+        echo "$data" | awk -F'[ \t]*\\|[ \t]*' "{print $field}";
+    done
+}
+
+
 export PATH=$HOME/bin/android-sdk-linux/platform-tools/:$HOME/bin/android-sdk-linux/tools:$PATH
 export EDITOR=vim
 export BROWSER=/usr/bin/firefox
 export JAVA_HOME=$HOME/bin/jdk1.7.0_21
 export ANDROID_HOME=$HOME/bin/android-sdk-linux
+export OPSCODE_USER=bourpaul
