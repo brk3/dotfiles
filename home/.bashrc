@@ -38,7 +38,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-alias meteorsms='ssh bourke-desktop meteorsms $1'
 alias gvim='gvim -geom 85x55'
 alias pp='python -mjson.tool'
 alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
@@ -73,10 +72,13 @@ get_field () {
     done
 }
 
-
 export PATH=$HOME/bin/android-sdk-linux/platform-tools/:$HOME/bin/android-sdk-linux/tools:$PATH
 export EDITOR=vim
-export BROWSER=/usr/bin/firefox
+export BROWSER=firefox
+
 export JAVA_HOME=$HOME/bin/jdk1.7.0_21
-export ANDROID_HOME=$HOME/bin/android-sdk-linux
-export OPSCODE_USER=bourpaul
+export ANDROID_HOME=$HOME/bin/android-sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
