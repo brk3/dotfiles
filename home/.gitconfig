@@ -19,5 +19,5 @@
         sed -e "s#^#$(git rev-parse --show-toplevel)/#"' -
     vim = !sh -c 'vim -p $(git fshow $1 | xargs)' -
 
-#[push]
-    #default = simple
+[push]
+	default = simple
