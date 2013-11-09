@@ -18,6 +18,7 @@
         grep -v "^$" | uniq | \
         sed -e "s#^#$(git rev-parse --show-toplevel)/#"' -
     vim = !sh -c 'vim -p $(git fshow $1 | xargs)' -
+    resolve = ! vim -p $(git status --porcelain | grep -E '^U' | cut -d' ' -f2)
 
 [push]
 	default = simple
