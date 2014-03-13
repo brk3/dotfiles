@@ -17,14 +17,8 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# if this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+export GIT_PS1_SHOWDIRTYSTATE=1
+PS1="\u@\h:\w\[\033[01;33m\]\$(__git_ps1)\\e[0m\n\$ "
 
 # alias definitions.
 if [ -f ~/.bash_aliases ]; then
@@ -72,13 +66,12 @@ get_field () {
     done
 }
 
-export PATH=$HOME/bin/android-sdk-linux/platform-tools/:$HOME/bin/android-sdk-linux/tools:$PATH
 export EDITOR=vim
 export BROWSER=firefox
-
 export JAVA_HOME=$HOME/bin/jdk1.7.0_21
 export ANDROID_HOME=$HOME/bin/android-sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/bin:$HOME/.rvm/bin
+export TERM="xterm-256color"
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
