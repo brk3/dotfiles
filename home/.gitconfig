@@ -14,10 +14,11 @@
 
 [alias]
     review = !sh `git rev-parse --show-toplevel`/tools/rfc.sh
-    fshow = !sh -c 'git show --pretty="format:" --name-only $1 | \
+    fshow = !sh -c 'git diff-tree --no-commit-id --name-only -r $1' -
+    fshow-fully-qualified = !sh -c 'git show --pretty="format:" --name-only $1 | \
         grep -v "^$" | uniq | \
         sed -e "s#^#$(git rev-parse --show-toplevel)/#"' -
-    vim = !sh -c 'vim -p $(git fshow $1 | xargs)' -
+    vim = !sh -c 'vim -p $(git fshow-fully-qualified $1 | xargs)' -
     resolve = ! vim -p $(git status --porcelain | grep -E '^U' | cut -d' ' -f2)
 
 [push]
