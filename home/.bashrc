@@ -19,13 +19,18 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-export GIT_PS1_SHOWDIRTYSTATE=1
-PS1="\u@\h:\w\[\033[01;33m\]\$(__git_ps1)\\e[0m\n\$ "
+if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
+  source "/usr/local/etc/bash_completion.d/git-completion.bash"
+fi
+
+source ~/.bash_colors
+if [ -f "/usr/local/etc/bash_completion.d/git-prompt.sh" ]; then
+  source "/usr/local/etc/bash_completion.d/git-prompt.sh"
+  export GIT_PS1_SHOWDIRTYSTATE=1
+  PS1="\u@\h:$BCyan\w$Yellow\$(__git_ps1)\\e[0m\n\$ "
+fi
 
 # alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || \
         eval "$(dircolors -b)"
