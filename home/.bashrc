@@ -39,9 +39,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias ls='ls -G'
+fi
+
 alias gvim='gvim -geom 85x55'
 alias pp='python -mjson.tool'
-alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
 
 # bash completion
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
