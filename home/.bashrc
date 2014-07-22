@@ -1,6 +1,8 @@
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+[[ -z "$TMUX" ]] && exec tmux
+
 # don't put duplicate lines in the history
 HISTCONTROL=ignoreboth
 
