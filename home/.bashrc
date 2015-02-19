@@ -1,8 +1,6 @@
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-[[ -z "$TMUX" ]] && exec tmux
-
 # don't put duplicate lines in the history
 HISTCONTROL=ignoreboth
 
@@ -85,3 +83,6 @@ export TERM="xterm-256color"
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+
+[[ -z "$TMUX" ]] && exec tmux
+
