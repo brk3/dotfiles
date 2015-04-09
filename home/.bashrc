@@ -83,6 +83,3 @@ export TERM="xterm-256color"
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
-
-[[ -z "$TMUX" ]] && exec tmux
-
