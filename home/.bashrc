@@ -78,8 +78,9 @@ export EDITOR=vim
 export BROWSER=firefox
 export JAVA_HOME=$HOME/bin/jdk1.7.0_21
 export ANDROID_HOME=$HOME/bin/android-sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/bin:$HOME/.rvm/bin
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/bin:$HOME/.rvm/bin:$JAVA_HOME/bin
 export TERM="xterm-256color"
+export GOPATH=$HOME/golang
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
