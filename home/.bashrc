@@ -1,8 +1,17 @@
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+jobscount() {
+  local stopped=$(jobs -sp | wc -l)
+  if [[ $stopped > 0 ]]; then
+    echo -n "[$stopped]"
+  fi
+}
+
 # Custom bash prompt via kirsle.net/wizards/ps1.html
-export PS1="\[$(tput bold)\]\[$(tput setaf 1)\]\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h:\[$(tput setaf 5)\]\W\[$(tput setaf 1)\]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+#export PS1="\[$(tput bold)\]\[$(tput setaf 1)\]\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h:\[$(tput setaf 5)\]\W\[$(tput setaf 1)\]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+# Single quotes stop early subsitution so jobscount is executed every time
+export PS1='\[$(tput bold)\]\[$(tput setaf 1)\]\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h:\[$(tput setaf 5)\]\W\[$(tput setaf 1)\]\[$(tput setaf 7)\]$(jobscount)$ \[$(tput sgr0)\]'
 
 # don't put duplicate lines in the history
 HISTCONTROL=ignoreboth
