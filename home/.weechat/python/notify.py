@@ -94,7 +94,7 @@ def notify_show(data, bufferp, uber_empty, tagsn, isdisplayed, ishilight, prefix
             pass
         # if im sending a message to someone, don't pop up a notification.
         elif weechat.buffer_get_string(bufferp, "localvar_nick") != prefix:
-            snreturn = show_notification(prefix, message)
+            snreturn = show_notification('WeeChat', 'New message from %s' % prefix)
     elif (int(ishilight) and weechat.config_get_plugin('show_hilights') == "on"):
         buffer = (weechat.buffer_get_string(bufferp, "short_name") or weechat.buffer_get_string(bufferp, "name"))
         snreturn = show_notification(buffer, prefix + weechat.config_get_plugin('nick_separator') + message)
