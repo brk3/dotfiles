@@ -1,31 +1,26 @@
-# imap
-set folder=imaps://webmail.hp.com
-set imap_user=bourpaul
-set imap_idle=yes
-set imap_keepalive=150
-set record="+Sent Items"
+source "$HOME/.password.mutt"
 
-# sidebar (http://www.lunar-linux.org/mutt-sidebar/)
-# which mailboxes to list in the sidebar
-mailboxes "=INBOX" "=Sent Items" "=openstack-gerrit" "=hpcs-jira" \
-     "=hpcs-hipchat" "=hpcs-gerrit"
-set sidebar_visible = yes
-set sidebar_width = 25
-# ctrl-n, ctrl-p to select next, prev folder
-# ctrl-o to open selected folder
-bind index,pager \CP sidebar-prev
-bind index,pager \CN sidebar-next
-bind index,pager \CO sidebar-open
+# imap
+set folder="imaps://stbeehive.oracle.com"
+set imap_user="paul.bourke@oracle.com"
+set imap_pass="$my_imap_pass"
+set imap_idle="yes"
+set imap_keepalive="150"
+set imap_check_subscribed
+set record="+Sent"
+
+# smtp
+set smtp_url="smtps://paul.bourke@oracle.com@stbeehive.oracle.com:465"
+set smtp_pass="$my_imap_pass"
 
 # sendmail
-set sendmail="/usr/sbin/ssmtp"
-set from="paul-david.bourke@hp.com"
+set from="paul.bourke@oracle.com"
 set realname="Paul Bourke"
-set sendmail_wait=-1
+set sendmail_wait="-1"
 
 # mailbox
 set postponed="~/.mutt/postponed"
-set spoolfile=+INBOX
+set spoolfile="+Inbox"
 set mbox_type=Maildir
 
 # pager
@@ -43,12 +38,12 @@ set sort=reverse-last-date-received
 
 # caches
 set header_cache="~/.mutt/headercache"
-set message_cachedir =~/.mutt/cache/bodies
-set certificate_file =~/.mutt/certificates
+set message_cachedir="~/.mutt/cache/bodies"
+set certificate_file="~/.mutt/certificates"
 set alias_file="~/.mutt/aliases"
 
-# ldap
-set query_command="lbdbq '%s' 2>/dev/null | grep -Evi 'compaq|digital'"
+## ldap
+#set query_command="lbdbq '%s' 2>/dev/null | grep -Evi 'compaq|digital'"
 
 # general options
 auto_view text/html
@@ -69,20 +64,6 @@ set reverse_realname=yes
 set signature="~/.mutt/sig"
 set sleep_time=0
 set timeout=5
-
-# s/mime settings
-# TODO: document setup
-source /etc/Muttrc.d/smime.rc
-set smime_ca_location="/usr/share/ca-certificates/ca-root.crt"
-set crypt_autosign = no
-set crypt_replyencrypt = no
-set smime_is_default
-set crypt_replysign = no
-set crypt_replysignencrypted = no
-set smime_certificates="~/.smime/certificates"
-set smime_keys="~/.smime/keys"
-set smime_default_key="a0769ac7.0"
-set smime_sign_as = "a0769ac7.0"
 
 # colors
 color normal default default
@@ -108,8 +89,8 @@ color header brightyellow default "^CC:"
 color body blue default "( *[-+=#*~_]){6,}"
 
 # messages to me
-color index yellow default "!~s [JIRA] ~p !~N !~T !~F !~P"
-color index brightgreen default "!~s [JIRA] ~p ~N !~T !~F !~P"
+#color index yellow default "!~s [JIRA] ~p !~N !~T !~F !~P"
+#color index brightgreen default "!~s [JIRA] ~p ~N !~T !~F !~P"
 
 # .n to mark all read
 macro index .n "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<clear-flag>*" \
@@ -119,3 +100,10 @@ macro index gh "<change-folder>=INBOX<enter>" "Go to inbox"
 
 # Sync mailbox regularly
 macro index <Return> <display-message><sync-mailbox>
+
+# Ctrl-n, Ctrl-p to select next, previous folder.
+# Ctrl-o to open selected folder.
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
