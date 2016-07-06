@@ -61,7 +61,7 @@ except ImportError, message:
 # script options
 settings = {
     "show_hilights"             : "on",
-    "show_priv_msg"             : "on",
+    "show_priv_msg"             : "off",
     "notify_when_away"          : "off",
     "nick_separator"            : ": ",
     "ignore_nicks_startwith"    : "*",
