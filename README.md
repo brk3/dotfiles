@@ -6,5 +6,5 @@ git clone git://github.com/andsens/homeshick.git \
 printf '\nalias homeshick="$HOME/.homesick/repos/homeshick/bin/homeshick"' \
     >> $HOME/.bashrc
 source $HOME/.bashrc
-homeshick clone git@github.com:brk3/dotfiles.git
+yes | homeshick clone git@github.com:brk3/dotfiles.git
 ```
