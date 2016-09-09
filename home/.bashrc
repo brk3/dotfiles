@@ -11,6 +11,10 @@ jobscount() {
 
 vimr() { vim -p $(find "$@" -type f | xargs) ;}
 
+_ssh_auth_save() {
+  ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh-auth-sock.$HOSTNAME"
+}
+
 # disable tilde expansion
 _expand() {
     return 0;
@@ -77,3 +81,5 @@ fi
 alias gvim='gvim -geom 85x55'
 alias pp='python -mjson.tool'
 alias os='openstack'
+alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
+alias tmux='_ssh_auth_save ; export HOSTNAME=$(hostname) ; tmux'
