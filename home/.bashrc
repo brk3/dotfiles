@@ -1,6 +1,8 @@
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+xhost local:$(whoami) > /dev/null
+
 ### Functions ###
 jobscount() {
   local stopped=$(jobs -sp | wc -l)
